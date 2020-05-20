@@ -1,16 +1,29 @@
-public class MyArrayDataException extends Exception {
-private int DataEr;
+import java.util.zip.DataFormatException;
 
-    public int  getDotaEr() {
-        return DataEr;
+public class MyArrayDataException extends DataFormatException {
+    private int x;
+    private int y;
+
+    public int getX() {
+        return x;
     }
 
-    public MyArrayDataException(int dataEr) {
-        DataEr = dataEr;
+    public int getY() {
+        return y;
     }
 
-    public MyArrayDataException(String message, int dataEr) {
-        super(message);
-        DataEr = dataEr;
+    public MyArrayDataException(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    public MyArrayDataException(String messege, int x, int y) {
+        super(messege);
+        this.x = x;
+        this.y = y;
+    }
+    public void PrintInfo(){
+        System.out.println("Не верный формат массива " + getX() + " " + getY());
     }
 }
+
+

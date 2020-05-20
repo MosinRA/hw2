@@ -1,16 +1,28 @@
-public class MyArraySizeException extends ArrayIndexOutOfBoundsException {
-    private int Arr;
+public class MyArraySizeException extends Exception {
+    private int lenght;
+    private int hight;
 
-    public int getArr() {
-        return Arr;
+    public int getLenght() {
+        return lenght;
     }
 
-    public MyArraySizeException(int arr) {
-        Arr = arr;
+    public int getHight() {
+        return hight;
     }
 
-    public MyArraySizeException(String message, int arr) {
-        super(message);
-        Arr = arr;
+    public MyArraySizeException(int lenght, int hight) {
+        this.lenght = lenght;
+        this.hight = hight;
     }
+
+    public MyArraySizeException(String messege, int lenght, int hight) {
+        super(messege);
+        this.lenght = lenght;
+        this.hight = hight;
+    }
+
+    public void PrintInfo() {
+        System.out.println("Не верный размер массива " + "первый индекс " + getLenght() + " второй индекс " + getHight() + " должно быит 4х4");
+    }
+
 }
